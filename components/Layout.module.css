@@ -1,0 +1,21 @@
+
+.header{
+    background-color: rgb(57, 74, 107);
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.layout{    
+    margin: 0;
+}
+
+.home{
+    background-color: rgb(163, 115, 207);
+    color: #fff;
+    border-radius: 20px;
+    padding: .5rem 1.2rem;
+    text-decoration: none;
+    line-height: 50px;
+}
