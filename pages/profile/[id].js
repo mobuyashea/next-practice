@@ -10,13 +10,14 @@ export async function getStaticPaths() {
     const paths= data.map((d)=>{
         return{
             params:{
-                id: d._id.toString(),
-                
+                id:d.id.toString(),                
             },
-        }
+        };
     });
+
     return {
-        paths,fallback:false,
+        paths,
+        fallback:false,
     }
 }
 
@@ -29,13 +30,24 @@ export async function getStaticProps({ params }) {
       },
     };
   }
+
+  // 感覺比較不實用一點
+  // export async function getServerSideProps({params}) {
+  //   const response = await fetch(`http://localhost:8080/students/${params.id}`);
+  //   const data = await response.json();
+  //   return {
+  //           props: {
+  //             data,
+  //           },
+  //         };    
+  // }
   
   export default function StudentProfile({ data }) {
     return (
       <div>
-        <h1>{data.name}</h1>
-        <h1>{data.age}</h1>
         <h1>{data.id}</h1>
+        <h1>{data.name}</h1>
+        <h1>{data.age}</h1>        
         <h1>{data.scholarship.merit}</h1>
         <h1>{data.scholarship.other}</h1>
       </div>
